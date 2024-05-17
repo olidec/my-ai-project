@@ -10,8 +10,6 @@ let flippedVideo;
 // To store the classification
 let label = "";
 let opponent = "";
-// let count;
-// let showText = true;
 
 // Load the model first
 function preload() {
@@ -29,10 +27,6 @@ function setup() {
 
   flippedVideo = ml5.flipImage(video);
   // Start classifying
-
-  // let button = createButton("Start Game");
-  // button.position(width / 2, height - 50);
-  // button.mousePressed(startGame);
 }
 
 function draw() {
@@ -46,32 +40,12 @@ function draw() {
   // textAlign(CENTER);
   // text(label, width / 2, height - 4);
 
-  // countdown();
-
   // Draw the opponent's move
   fill(255);
   textAlign(CENTER);
-  // textSize(300);
-  // if (showText) {
-  //   text(count, width / 2, height / 2);
-  // }
   textSize(200);
   text(opponent, width / 2, height / 2);
-
-  // text(count, width / 2, height / 2);
 }
-
-// function countdown() {
-//   for (let i = 0; i <= 3; i++) {
-//     setTimeout(() => {
-//       count = 3 - i;
-//       textSize(300);
-//       textAlign(CENTER);
-//       // text(count, width / 2, height / 2);
-//       // showText = false;
-//     }, 1000 * i);
-//   }
-// }
 
 // Get a prediction for the current video frame
 function classifyVideo() {
@@ -100,10 +74,3 @@ function gotResult(error, results) {
   // Classifiy again!
   classifyVideo();
 }
-
-// startGame = () => {
-//   image(flippedVideo, 0, 0);
-//   // countdown();
-//   // classifyVideo();
-//   // video.stop();
-// };
